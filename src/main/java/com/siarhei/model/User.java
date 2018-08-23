@@ -1,28 +1,27 @@
 package com.siarhei.model;
 
-import java.util.List;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotBlank;
-
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @Entity
 public class User {
 
-  @Id
-  @GeneratedValue
-  private Long id;
+    @Id
+    @GeneratedValue
+    private Long id;
 
-  @NotBlank
-  private String name;
+    @NotBlank
+    private String name;
 
-  @ManyToMany
-  private List<Role> roles;
+    @ManyToMany
+    private List<Role> roles;
 }
